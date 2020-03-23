@@ -46,5 +46,11 @@
     "inputFiles": [
       "wwwroot/lib/jquery/dist/jquery.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home.min.css",
+    "inputFiles": [
+      "wwwroot/css/home.css"
+    ]
   }
 ]

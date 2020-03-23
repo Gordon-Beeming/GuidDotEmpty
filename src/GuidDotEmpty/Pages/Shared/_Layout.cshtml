@@ -1,18 +1,48 @@
-﻿<!DOCTYPE html>
+﻿@{
+  var centerMode = false;
+  var verticalCenterClass = string.Empty;
+  if (ViewData["CenterMode"] != null && (bool)ViewData["CenterMode"])
+  {
+    centerMode = true;
+    verticalCenterClass = "vertical-center";
+  }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@ViewData["Title"] - Guid.Empty</title>
-
-  <environment include="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+  @if (centerMode)
+  {
+    <title>Guid.Empty</title>
+  }
+  else
+  {
+    <title>@ViewData["Title"] - Guid.Empty</title>
+  }
+<environment include="Development">
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+  @if (centerMode)
+  {
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+  }
+  else
+  {
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-  </environment>
-  <environment exclude="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+  }
+</environment>
+<environment exclude="Development">
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+  @if (centerMode)
+  {
+    <link rel="stylesheet" href="~/css/home.min.css" asp-append-version="true" />
+  }
+  else
+  {
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-  </environment>
+  }
+</environment>
 
 </head>
 <body>
@@ -27,7 +57,7 @@
       </div>
     </nav>
   </header>
-  <div class="vertical-center">
+  <div class="@(verticalCenterClass)">
     <div class="container">
       <main role="main" class="pb-3">
         @RenderBody()
