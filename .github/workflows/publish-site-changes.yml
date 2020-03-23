@@ -26,5 +26,5 @@ jobs:
       run: dotnet test --no-restore --no-build --verbosity normal /nologo
       working-directory: src
     - name: Publish
-      run: dotnet publish --no-restore --no-build --verbosity normal /nologo /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:DesktopBuildPackageLocation="../../package/package.zip"
+      run: dotnet publish --no-restore --verbosity normal /nologo /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:DesktopBuildPackageLocation="../../package/package.zip"
       working-directory: src

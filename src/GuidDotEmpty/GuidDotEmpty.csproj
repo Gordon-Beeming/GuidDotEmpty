@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationInsightsResourceId>/subscriptions/8bec5d67-8e91-466a-8d6b-1bbfa4f642df/resourcegroups/Community/providers/Microsoft.Insights/components/GuidDotEmpty</ApplicationInsightsResourceId>
-    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
   <ItemGroup>
