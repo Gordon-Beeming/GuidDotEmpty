@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "resourceId": "/subscriptions/8bec5d67-8e91-466a-8d6b-1bbfa4f642df/resourcegroups/Community/providers/Microsoft.Insights/components/GuidDotEmpty",
+      "type": "appInsights.azure",
+      "connectionId": null
+    }
+  }
+}
