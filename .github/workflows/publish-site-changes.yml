@@ -16,6 +16,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.102
+
     - name: Install dependencies
       run: dotnet restore /nologo
       working-directory: src
@@ -28,3 +29,10 @@ jobs:
     - name: Publish
       run: dotnet publish --no-restore --output "../package" --verbosity normal /nologo
       working-directory: src
+            
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'GuidDotEmpty'
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: 'package'
