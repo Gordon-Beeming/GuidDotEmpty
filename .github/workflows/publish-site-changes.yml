@@ -17,11 +17,14 @@ jobs:
       with:
         dotnet-version: 3.1.102
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore /nologo
       working-directory: src
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore /nologo
       working-directory: src
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --no-build /nologo --verbosity normal
+      working-directory: src
+    - name: Publish
+      run: dotnet publish --no-restore --no-build /nologo /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:DesktopBuildPackageLocation="../../package/package.zip" --verbosity normal
       working-directory: src
