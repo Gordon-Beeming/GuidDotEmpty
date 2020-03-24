@@ -32,6 +32,11 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+  background-image: url('/image/background.png');
+  background-repeat: repeat;
+}
+body {
+  background: none;
 }
 @media (min-width: 768px) {
   html {
@@ -68,6 +73,7 @@ html {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+  background: white;
 }
 
 html, body {
